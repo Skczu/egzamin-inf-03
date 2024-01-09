@@ -1,0 +1,10 @@
+SELECT nazwa, ilosc, opis, cena, zdjecie FROM produkty
+WHERE Rodzaje_id IN (1, 2);
+
+SELECT p.nazwa, pr.nazwa FROM produkty p
+JOIN producenci pr ON p.Producenci_id = pr.id
+WHERE p.ilosc < 10 AND p.Rodzaje_id = 1;
+
+CREATE USER anna@localhost IDENTIFIED BY '@nna23';
+
+INSERT INTO produkty VALUES (NULL, 1, 4, 'owoc1', 10, '', 9.99, 'owoce.jpg');

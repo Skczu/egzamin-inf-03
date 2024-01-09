@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Style w JavaScript</title>
+    <link rel="stylesheet" href="styl6.css" />
+  </head>
+  <body>
+    <main>
+      <section class="left-block">
+        <h1>Konfigurator stylu</h1>
+        <p>Podaj kolor tła</p>
+        <button class="indigo-button">Indigo</button>
+        <button class="steelblue-button">SteelBlue</button>
+        <button class="olive-button">Olive</button>
+        <p>Podaj kolor czcionki</p>
+        <select name="czcionka_kolor" id="czcionka_kolor">
+          <option value="white">White</option>
+          <option value="tan">Tan</option>
+          <option value="bisque">Bisque</option>
+          <option value="plum">Plum</option>
+        </select>
+        <p>Podaj rozmiar czcionki w procentach, np. 200%</p>
+        <input
+          type="text"
+          name="czcionka_rozmiar"
+          id="czcionka_rozmiar"
+          placeholder="100%"
+        />
+        <p>Czy rysunek ma mieć ramkę?</p>
+        <input type="checkbox" name="ramka" id="ramka" checked />
+        <label for="ramka">Rysuj ramkę</label>
+        <p>Jaki jest typ punktora listy?</p>
+        <label class="radio-label" for="dysk">
+          <input type="radio" name="punktor" id="dysk" value="disc" checked />
+          dysk</label
+        >
+        <label class="radio-label" for="kwadrat"
+          ><input type="radio" name="punktor" id="kwadrat" value="square" />
+          kwadrat</label
+        >
+        <label class="radio-label" for="okrag"
+          ><input type="radio" name="punktor" id="okrag" value="circle" />
+          okrąg</label
+        >
+      </section>
+      <section class="right-block">
+        <div class="preview-container">
+          <img
+            class="preview-img preview-img-border"
+            src="./gibraltar.jpg"
+            alt="półwysep Gibraltar"
+          />
+          <ul>
+            <li>element 1</li>
+            <li>element 2</li>
+            <li>element 3</li>
+          </ul>
+        </div>
+        <p class="preview-p">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat. Duis aute irure dolor in
+          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+          culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+      </section>
+    </main>
+    <footer>
+      <span>Autor: 00000000000</span>
+    </footer>
+
+    <script>
+      const buttons = document.querySelectorAll('button');
+      const select = document.querySelector('select');
+      const fontInput = document.querySelector('#czcionka_rozmiar');
+      const checkbox = document.querySelector('#ramka');
+      const radios = document.querySelectorAll('input[type="radio"]');
+      const rightBlock = document.querySelector('.right-block');
+      const image = document.querySelector('.preview-img');
+      const list = document.querySelector('ul');
+
+      console.log(image);
+
+      buttons.forEach((btn) => {
+        btn.addEventListener('click', () => {
+          rightBlock.style.backgroundColor = btn.innerHTML;
+        });
+      });
+
+      select.addEventListener('change', (e) => {
+        rightBlock.style.color = e.currentTarget.value;
+      });
+
+      fontInput.addEventListener('blur', () => {
+        rightBlock.style.fontSize = fontInput.value;
+      });
+
+      checkbox.addEventListener('change', () => {
+        image.classList.toggle('preview-img-border');
+      });
+
+      radios.forEach((r) => {
+        r.addEventListener('click', () => {
+          list.style.listStyleType = r.value;
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,59 @@
+* {
+  font-family: Georgia;
+}
+
+main {
+  display: flex;
+}
+
+.preview-container {
+  display: flex;
+}
+
+.left-block {
+  background-color: maroon;
+  color: white;
+  height: 600px;
+  width: 30%;
+}
+
+.right-block {
+  background-color: maroon;
+  color: white;
+  height: 600px;
+  width: 70%;
+  overflow: auto;
+}
+
+.radio-label {
+  display: block;
+}
+
+footer {
+  background-color: dimgray;
+  color: white;
+}
+
+.preview-p {
+  padding: 10px;
+}
+
+.preview-img {
+  padding: 10px;
+}
+
+.preview-img-border {
+  border: 1px solid white;
+}
+
+.indigo-button {
+  background-color: indigo;
+}
+
+.steelblue-button {
+  background-color: steelblue;
+}
+
+.olive-button {
+  background-color: olive;
+}

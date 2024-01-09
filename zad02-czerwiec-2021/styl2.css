@@ -1,0 +1,53 @@
+* {
+  font-family: Garamond;
+}
+
+header {
+  display: flex;
+}
+
+.left-banner {
+  background-color: #00600f;
+  color: white;
+  text-align: center;
+  width: 75%;
+  height: 90px;
+}
+
+.right-banner {
+  background-color: #00600f;
+  color: white;
+  width: 25%;
+  height: 90px;
+}
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #c8e6c9;
+  height: 600px;
+  overflow: scroll;
+}
+
+footer {
+  background-color: #00600f;
+  color: white;
+}
+
+h5 {
+  background-color: #00600f;
+  color: white;
+  font-size: 200%;
+  text-align: center;
+  margin: 0px;
+}
+
+h2 {
+  text-align: center;
+}
+
+.product-block {
+  margin: 10px;
+  border: 1px solid #00600f;
+  width: 300px;
+}

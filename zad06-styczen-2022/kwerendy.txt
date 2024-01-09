@@ -1,0 +1,9 @@
+CREATE USER Agnieszka@localhost IDENTIFIED BY 'haslo4';
+
+SELECT AVG(rocznik) FROM samochody WHERE marka = 'opel';
+
+SELECT s.marka, k.imie FROM samochody s JOIN wypozyczenia w
+ON s.id = w.samochody_id JOIN klienci k
+ON k.id = w.klienci_id;
+
+ALTER TABLE klasa DROP cena;
