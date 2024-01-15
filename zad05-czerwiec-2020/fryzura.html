@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Usługi fryzjerskie</title>
+    <link rel="stylesheet" href="styl2.css" />
+  </head>
+  <body>
+    <div class="flex-wrapper">
+      <main>
+        <section class="first-left-block">
+          <a href="index.html">
+            <h2>SALON FRYZJERSKI</h2>
+          </a>
+          <img src="obraz2.jpg" alt="Czesanie" />
+        </section>
+        <div class="second-left-block">
+          <h3>Dziś promocja na strzyżenie włosów</h3>
+          <form>
+            <label>
+              <input type="radio" name="dlugosc_wlosow" value="krotkie" />
+              <span>Krótkie</span>
+            </label>
+            <label>
+              <input type="radio" name="dlugosc_wlosow" value="srednie" />
+              <span>Średnie</span>
+            </label>
+            <label>
+              <input type="radio" name="dlugosc_wlosow" value="poldlugie" />
+              <span>Półdługie</span>
+            </label>
+            <label>
+              <input type="radio" name="dlugosc_wlosow" value="dlugie" />
+              <span>Długie</span>
+            </label>
+            <button type="submit">Odkryj promocję</button>
+            <p class="script-result"></p>
+          </form>
+        </div>
+      </main>
+      <aside>
+        <header class="first-right-block">
+          <h2>MENU</h2>
+        </header>
+        <div class="second-right-block">
+          <ol>
+            <li>
+              <a href="fryzura.html">Strzyżenie</a>
+              <ul>
+                <li>krótkie</li>
+                <li>średnie</li>
+                <li>półdługie</li>
+                <li>długie</li>
+              </ul>
+            </li>
+            <li>Czesanie</li>
+            <li>Koloryzacja</li>
+          </ol>
+        </div>
+        <div class="third-right-block">
+          <img src="obraz1.jpg" alt="Fryzjer" />
+        </div>
+      </aside>
+    </div>
+    <footer>
+      <p>Autor: 00000000000</p>
+    </footer>
+
+    <script>
+      const pricing = {
+        krotkie: 25,
+        srednie: 30,
+        poldlugie: 40,
+        dlugie: 50,
+      };
+
+      const form = document.querySelector('form');
+      const result = document.querySelector('.script-result');
+
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const choice = new FormData(form).get('dlugosc_wlosow');
+        result.textContent = 'Cena strzyżenia: ' + pricing[choice];
+      });
+    </script>
+  </body>
+</html>

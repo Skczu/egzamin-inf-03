@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Firma IT</title>
+    <link rel="stylesheet" href="styl.css" />
+    <link rel="shortcut icon" href="logo.png" type="image/x-icon" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <div class="logo">
+          <img src="logo.png" alt="firma it" />
+        </div>
+        <nav>
+          <a href="index.html">Strona Główna</a>
+          <a href="uslugi.html">Usługi</a>
+          <a href="kontakt.html">Kontakt</a>
+        </nav>
+        <div class="banner">
+          <img src="animacja.gif" alt="Usługi informatyczne" />
+        </div>
+      </header>
+      <main>
+        <h2>Kontakt</h2>
+        <table>
+          <tr>
+            <td>Imię:</td>
+            <td>
+              <input type="text" id="imie" />
+            </td>
+          </tr>
+          <tr>
+            <td>Nazwisko:</td>
+            <td>
+              <input type="text" id="nazwisko" />
+            </td>
+          </tr>
+          <tr>
+            <td>E-mail:</td>
+            <td>
+              <input type="email" id="email" />
+            </td>
+          </tr>
+          <tr>
+            <td>Zgłoszenie:</td>
+            <td>
+              <textarea id="zgloszenie" cols="40" rows="10"></textarea>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>
+              <input type="checkbox" id="regulamin" />
+              <label for="regulamin">Zapoznałam/em się z regulaminem</label>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>
+              <button id="reset" type="reset">Resetuj</button>
+              <button id="przeslij" type="submit">Prześlij</button>
+            </td>
+          </tr>
+        </table>
+        <hr />
+        <p id="wynik"></p>
+      </main>
+      <footer>
+        <span>Autor strony: <strong>00000000000</strong></span>
+      </footer>
+    </div>
+
+    <script>
+      const poleImie = document.getElementById('imie');
+      const poleNazwisko = document.getElementById('nazwisko');
+      const poleEmail = document.getElementById('email');
+      const poleZgloszenie = document.getElementById('zgloszenie');
+      const poleRegulamin = document.getElementById('regulamin');
+      const przyciskReset = document.getElementById('reset');
+      const przyciskPrzeslij = document.getElementById('przeslij');
+      const wynik = document.getElementById('wynik');
+
+      przyciskReset.addEventListener('click', () => {
+        poleImie.textContent = '';
+        poleNazwisko.textContent = '';
+        poleEmail.textContent = '';
+        poleZgloszenie.textContent = '';
+        poleRegulamin.checked = false;
+      });
+
+      przyciskPrzeslij.addEventListener('click', () => {
+        if (!poleRegulamin.checked) {
+          wynik.style.color = 'red';
+          wynik.textContent = 'Musisz zapoznać się z regulaminem';
+        } else {
+          wynik.style.color = 'navy';
+          wynik.innerHTML = `${poleImie.value.toUpperCase()} ${poleNazwisko.value.toUpperCase()} Treść Twojej sprawy: ${
+            poleZgloszenie.value
+          }`;
+        }
+      });
+    </script>
+  </body>
+</html>
