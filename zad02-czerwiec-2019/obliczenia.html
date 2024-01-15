@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stacja paliw</title>
+    <link rel="stylesheet" href="styl3.css" />
+  </head>
+  <body>
+    <header>
+      <div class="left-banner">
+        <h1>Stacja Paliw</h1>
+      </div>
+      <div class="right-banner">
+        <a href="stacja.html">
+          <img src="home.png" alt="strona główna" />
+        </a>
+        <a href="obliczenia.html">
+          <img src="znak.png" alt="obliczenia" />
+        </a>
+      </div>
+    </header>
+    <main>
+      <h3>Oblicz koszt paliwa</h3>
+      <label for="type">Rodzaj paliwa (1-benzyna, 2-olej napędowy): </label>
+      <input type="number" id="type" />
+      <label for="amount">Ile litrów</label>
+      <input type="number" id="amount" />
+      <button id="calculate">OBLICZ</button>
+      <p id="result"></p>
+    </main>
+    <section>
+      <div class="left-block">
+        <a href="kwerendy.txt">Pobierz kwerendy</a>
+      </div>
+      <div class="right-block">
+        <img src="samochod.png" alt="samochód" />
+      </div>
+    </section>
+    <footer>
+      <p>Stronę opracował: 00000000000</p>
+    </footer>
+
+    <script>
+      const typeInput = document.getElementById('type');
+      const amountInput = document.getElementById('amount');
+      const calculateButton = document.getElementById('calculate');
+      const result = document.getElementById('result');
+
+      let price;
+
+      calculateButton.addEventListener('click', () => {
+        switch (typeInput.value) {
+          case '1':
+            price = 4 * amountInput.value;
+            break;
+          case '2':
+            price = 3.5 * amountInput.value;
+            break;
+          default:
+            price = 0;
+        }
+
+        result.textContent = `koszt paliwa: ${price}zł`;
+      });
+    </script>
+  </body>
+</html>
